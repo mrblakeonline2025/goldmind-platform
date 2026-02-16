@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldMind Tuition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              gold: '#FFC500',
+              'brand-grey': '#414042',
+              'gm-bg': '#FBFBFB',
+            },
+            boxShadow: {
+              'gm-soft': '0 10px 35px -5px rgba(0, 0, 0, 0.02), 0 8px 15px -6px rgba(0, 0, 0, 0.02)',
+              'gm-hover': '0 20px 50px -12px rgba(0, 0, 0, 0.05)',
+              'gm-gold': '0 15px 30px -5px rgba(255, 197, 0, 0.2)',
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply bg-gm-bg text-brand-grey antialiased selection:bg-gold/30;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+          @apply font-black tracking-tighter uppercase leading-none;
+        }
+
+        /* Enforce consistent focus states globally */
+        input, textarea, select {
+          @apply focus:ring-2 focus:ring-gold focus:border-gold outline-none transition-all duration-200 border-gray-100 !important;
+        }
+      }
+
+      @layer components {
+        /* Standardise Card Polish */
+        div[class*="bg-white"][class*="rounded-"] {
+          @apply border border-gray-100/60 shadow-gm-soft transition-all duration-500 hover:shadow-gm-hover hover:border-gray-200/50 !important;
+        }
+
+        /* Standardise Primary Button Polish */
+        button[class*="bg-gold"], a[class*="bg-gold"] {
+          @apply transition-all duration-300 active:scale-95 hover:brightness-[1.02] hover:shadow-gm-gold !important;
+        }
+
+        /* Standardise Dark Button Polish */
+        button[class*="bg-brand-grey"], a[class*="bg-brand-grey"] {
+          @apply transition-all duration-300 active:scale-95 hover:brightness-110 hover:shadow-xl !important;
+        }
+
+        /* Custom Scrollbar Polish */
+        .custom-scrollbar::-webkit-scrollbar {
+          @apply w-1.5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          @apply bg-transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          @apply bg-gray-200 rounded-full border-4 border-transparent bg-clip-padding;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          @apply bg-gray-300;
+        }
+        
+        /* Utility for consistent spacing sections */
+        .gm-section-padding {
+          @apply py-16 px-8;
+        }
+      }
+
+      /* Non-Tailwind fallback styles */
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.48.1",
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "GoldMind Tuition Learning Platform v3 - 14.31 15.02.2026",
+  "description": "GoldMind Teaching System’s high-end, academic tuition management platform with role-based access, multi-subject course enrollment, and AI-powered course counseling.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
