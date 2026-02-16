@@ -1,0 +1,1 @@
+# goldmind-platform
